@@ -1,13 +1,15 @@
-#Duckdb Lake to put output files as seperate parquet files
 import duckdb
 import os
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-# File paths
-original_duckdb_file = '/home/christianocean/pdr_pipeline/duckdb.db'
-query_folder = '/home/christianocean/pdr_pipeline/sql'
-parquet_output_folder = '/home/christianocean/pdr_pipeline/output_parquet'
+# Get the directory of the current script (repo root)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct relative paths based on the script location
+original_duckdb_file = os.path.join(script_dir, '../duckdb.db')
+query_folder = os.path.join(script_dir, '../sql')
+parquet_output_folder = os.path.join(script_dir, '../output_parquet')
 
 # Ensure the output folder exists
 if not os.path.exists(parquet_output_folder):
@@ -43,4 +45,3 @@ for query_file in query_files:
 original_conn.close()
 
 print("Queries have been executed and results stored as Parquet files.")
-
