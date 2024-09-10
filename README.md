@@ -40,3 +40,19 @@ This will execute the full pipeline in sequence.
    - The newly created DuckDB file is then used as a data source to power the Evidence-based visualizations. The visualizations are rendered through an Evidence app, and the markdown files for these visualizations can be found in the `pdr/pages` directory.
 
 By following these steps, you can download, process, and visualize data seamlessly through the pipeline.
+
+# Pro Tip: Using Harlequin with DuckDB
+
+While inside your virtual environment (`venv`) in a terminal, you can use the following command to open your DuckDB file in a local SQL editor called Harlequin:
+
+```bash
+harlequin path/to/duckdb/file
+```
+
+This will open the specified DuckDB file (`.duckdb`) in a graphical interface where you can run SQL queries and inspect your data.
+
+### Important Note:
+
+After you're done working with the DuckDB file, **make sure to close the terminal window** where Harlequin was running. This ensures the connection to the DuckDB file is properly closed before you attempt to use the file elsewhere.
+
+If you don't close the terminal, other processes might encounter issues when trying to open or modify the DuckDB file because the file will still be locked by the open connection.
