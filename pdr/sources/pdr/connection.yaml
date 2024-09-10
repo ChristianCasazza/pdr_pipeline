@@ -1,0 +1,5 @@
+# This file was automatically generated
+name: pdr
+type: duckdb
+options:
+  filename: duckdb_output.db

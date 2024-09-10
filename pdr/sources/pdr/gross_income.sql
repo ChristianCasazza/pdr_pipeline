@@ -1,0 +1,1 @@
+SELECT * FROM gross_income;

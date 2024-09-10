@@ -1,0 +1,1 @@
+SELECT * FROM avg_accuracy;

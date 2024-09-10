@@ -1,0 +1,1 @@
+SELECT * FROM predictoor_metrics;
